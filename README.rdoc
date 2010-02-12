@@ -1,0 +1,18 @@
+= Ajax.CachedRequest
+
+Cache Ajax requests so you don't do the same thing twice.
+
+Syntax is the same as Ajax.Request, but if it has already performed that request you'll get the data right back.
+
+At the moment it doesn't try and guess based on url/params and you have to name the cache, but in future versions this won't be necessary.
+
+If a request is in progress, you'll get the results when they come in.
+    
+    new Ajax.CachedRequest("/data", {
+      method: "post",
+      name: "some_name",
+      onComplete: function(transport)
+      {
+        // do something...
+      }    
+    });
